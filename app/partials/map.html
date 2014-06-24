@@ -1,5 +1,11 @@
 <header>
     <h1>Wun Two Three: follow the helpers</h1>
+    <div id="map-controls">
+    <span class="label">Filter by Helper ID:</span>
+    <select id="id-dropdown" ng-model="filteredID">
+      <option selected-value value="0">Show All</option>
+      <option ng-repeat="id in ids" value="{{id}}">{{id}}</option>
+    </select>
 </header>
 
 <div id="map-wrapper">

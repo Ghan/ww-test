@@ -2,14 +2,19 @@ html { height: 100% }
 body { height: 100%; margin: 0; padding: 0 }
 
 header{
-    position: fixed;
-    bottom: 0;
-    z-index: 10;
+    h1{
+        margin: .25em;
+        display: inline-block;
+        width: 50%;
+    }    
+    #map-controls{
+        display: inline-block;
+    }
 }
 
 #map-wrapper{
     position: absolute;
-    top: 0;
+    top: 4em;
     width: 100%;
     left:0;
     bottom: 0;
@@ -17,33 +22,4 @@ header{
 }
 #map-canvas { 
     height: 100%;
-}
-
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
-}
-
-.menu:before {
-  content: "[";
-}
-
-.menu:after {
-  content: "]";
-}
-
-.menu > li {
-  display: inline;
-}
-
-.menu > li:before {
-  content: "|";
-  padding-right: 0.3em;
-}
-
-.menu > li:nth-child(1):before {
-  content: "";
-  padding: 0;
 }
