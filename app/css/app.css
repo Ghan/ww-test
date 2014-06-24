@@ -6,6 +6,19 @@ body {
   margin: 0;
   padding: 0; }
 
+header {
+  position: fixed;
+  bottom: 0;
+  z-index: 10; }
+
+#map-wrapper {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  height: 100%; }
+
 #map-canvas {
   height: 100%; }
 
