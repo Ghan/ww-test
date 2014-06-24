@@ -3,9 +3,8 @@
 /* Controllers */
 
 angular.module('myApp.controllers', [])
-  .controller('MyCtrl1', ['$scope', function($scope) {
-
-  }])
-  .controller('MyCtrl2', ['$scope', function($scope) {
-
+  .controller('mapPageCtrl', ['$scope', 'markerListService', function($scope, markerListService) {
+      markerListService.fetch().then(function(data) {
+          $scope.data = data;
+      }); 
   }]);
