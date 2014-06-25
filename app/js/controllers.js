@@ -30,8 +30,7 @@ angular.module('myApp.controllers', [])
       
       var mapOptions = {
         zoom: 12,
-        center: new google.maps.LatLng(40.7550624, -73.9634123),
-        mapTypeId: google.maps.MapTypeId.TERRAIN    
+        center: new google.maps.LatLng(40.7550624, -73.9634123)    
       };
 
       $scope.map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
@@ -48,12 +47,7 @@ angular.module('myApp.controllers', [])
                 icon: iconPath
         });
         
-        marker.content = '<div class="infoWindowContent">' + info.desc + '</div>';
-
-        google.maps.event.addListener(marker, 'click', function(){
-          infoWindow.setContent('<h2>' + marker.title + '</h2>' + marker.content);
-          infoWindow.open($scope.map, marker);
-        });
+        marker.setValues({speed: info.speed, heading: info.heading, created_at: info.created_at});
 
         $scope.markers.push(marker);
       }
@@ -67,8 +61,4 @@ angular.module('myApp.controllers', [])
         }
       }
 
-      $scope.openInfoWindow = function(e, selectedMarker){
-          e.preventDefault();
-          google.maps.event.trigger(selectedMarker, 'click');
-      }
   }]);

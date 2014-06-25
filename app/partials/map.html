@@ -3,10 +3,10 @@
     	<h1>WunWhere</h1>
     	<h2>follow the helpers</h2>
     </div>
-    <div id="map-controls">
+    <div id="select-wrap">
     	<select id="id-dropdown" ng-model="filteredID">
-      		<option selected-value value="0">All Helpers</option>
-      		<option ng-repeat="id in ids" value="{{id}}">Helper {{id}}</option>
+      		<option class="id-option" selected-value value="0">All Helpers</option>
+      		<option class="id-option" ng-repeat="id in ids" value="{{id}}">Helper {{id}}</option>
     	</select>
 	</div>
 </header>

@@ -37,7 +37,7 @@ header h2 {
   margin: 0;
   font-weight: lighter;
   line-height: 1em; }
-header #map-controls {
+header #select-wrap {
   display: inline-block;
   vertical-align: middle;
   border: 1px solid #ccc;
@@ -46,7 +46,7 @@ header #map-controls {
   background: #fafafa;
   position: relative;
   padding-right: 20px; }
-  header #map-controls:after {
+  header #select-wrap:after {
     content: " ";
     width: 0;
     height: 0;
@@ -57,7 +57,7 @@ header #map-controls {
     position: absolute;
     top: .75em;
     right: 10px; }
-  header #map-controls select {
+  header #select-wrap select {
     padding: 5px 8px;
     width: 130%;
     border: none;
@@ -65,7 +65,7 @@ header #map-controls {
     background: transparent;
     background-image: none;
     -webkit-appearance: none; }
-    header #map-controls select:focus {
+    header #select-wrap select:focus {
       outline: none; }
 
 #map-wrapper {
