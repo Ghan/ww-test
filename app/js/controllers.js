@@ -8,6 +8,8 @@ angular.module('myApp.controllers', [])
       $scope.filteredID = 0;
       $scope.data;
       $scope.markers = [];
+      $scope.fromDate = null;
+      $scope.toDate = null;
       
       markerListService.fetch().then(function(data) {
           $scope.data = data;
@@ -20,11 +22,11 @@ angular.module('myApp.controllers', [])
           }
       });
       
-      $scope.$watch('filteredID', function() {
+      $scope.$watchCollection('[filteredID, fromDate, toDate]', function() {
         if($scope.filteredID > 0){
-          resetMap($scope.filteredID);
+          resetMap($scope.filteredID, $scope.fromDate, $scope.toDate);
         } else {
-          resetMap("all");
+          resetMap("all", $scope.fromDate, $scope.toDate);
         }
       });
       
@@ -51,14 +53,26 @@ angular.module('myApp.controllers', [])
 
         $scope.markers.push(marker);
       }
+
+      $scope.clearValues = function(){
+        $scope.fromDate = null;
+        $scope.toDate = null;
+        $scope.filteredID = 0;
+      }
       
-      var resetMap = function(id){
+      var resetMap = function(id, from, to){
+        var fromDate = (from) ? new Date(from) : new Date('01/01/1900');
+        var toDate = (to) ? new Date(to) : Date.now();
+
         for(var i = 0; i < $scope.markers.length; i++){
           $scope.markers[i].setMap(null);
-          if($scope.markers[i].title === id || id === "all"){
+          var mDate = new Date($scope.markers[i].get("created_at"));
+          if(($scope.markers[i].title === id || id === "all") && (mDate > fromDate && mDate < toDate)){
             $scope.markers[i].setMap($scope.map);
           }
         }
       }
 
+      $("#date-from").datepicker();
+      $("#date-to").datepicker();
   }]);

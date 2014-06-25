@@ -9,6 +9,9 @@
       		<option class="id-option" ng-repeat="id in ids" value="{{id}}">Helper {{id}}</option>
     	</select>
 	</div>
+	<input type="text" placeholder="From: All Time" id="date-from" ng-model="fromDate" />
+	<input type="text" placeholder="To: All Time" id="date-to" ng-model="toDate" />
+	<input type="button" value="Clear All" id="clear-all" ng-click="clearValues()"/>
 </header>
 
 <div id="map-wrapper">

@@ -77,6 +77,30 @@ header{
             }
         }
     }
+    #date-from, #date-to{
+        display: inline-block;
+        vertical-align: middle;
+        width: 10%;
+        margin: 0 1%;
+        border: 1px solid #ccc;
+        padding: .25em 1%;
+        border-radius: 3px;
+    }
+    #clear-all{
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        overflow: hidden;
+        background: #fafafa;
+        padding: .25em 1%;
+        &:focus{
+            outline: none;
+        }
+        &:hover{
+            background: white;
+            outline: auto;
+            outline-color: #fafafa;
+        }
+    }
 }
 
 #map-wrapper{
