@@ -21,6 +21,8 @@ BONUS: Add a toggle to switch on/off a Heatmap mode, where areas with lots of pl
 
 npm start
 
-loads in http://localhost:8000/app/index.html
+(loads in http://localhost:8000/app/index.html)
 
-in new tab, npm run protractor to run e-to-e test
+grunt watch
+
+npm run protractor

@@ -39,10 +39,13 @@ angular.module('myApp.controllers', [])
       var infoWindow = new google.maps.InfoWindow();
 
       var createMarker = function (info){
+        var iconPath = 'https://maps.gstatic.com/intl/en_ALL/mapfiles/markers2/measle.png';
+
         var marker = new google.maps.Marker({
                 map: $scope.map,
                 position: new google.maps.LatLng(info.latitude, info.longitude),
-                title: info.positionable_id.toString()
+                title: info.positionable_id.toString(),
+                icon: iconPath
         });
         
         marker.content = '<div class="infoWindowContent">' + info.desc + '</div>';
